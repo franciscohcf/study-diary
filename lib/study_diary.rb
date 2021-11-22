@@ -1,6 +1,9 @@
-require "study_diary/version"
+# frozen_string_literal: true
+
+require 'study_diary/version'
 
 module StudyDiary
   class Error < StandardError; end
-  # Your code goes here...
+
+  class StudyDiary; end
 end
