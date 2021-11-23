@@ -25,6 +25,9 @@ loop do
   when 5
     study_diary.search
     study_diary.wait
+  when 6
+    study_diary.list
+    study_diary.wait
   when 7
     puts
     "A aplicação está sendo encerrada!"

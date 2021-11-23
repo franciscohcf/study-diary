@@ -101,6 +101,23 @@ class StudyDiary
     end
   end
 
+  def list
+    puts
+    puts 'Insira a categoria a ser listada'
+    temp = gets.chomp
+    puts
+    puts temp.upcase
+    puts
+    @contents.each do |i|
+      next unless i[1].category.name == temp
+
+      puts "Título: #{i[0]}"
+      puts "Descrição: #{i[1].description}" unless i[1].description.nil?
+      puts i[1].check == true ? 'Item concluído' : 'Pendente'
+      puts
+    end
+  end
+
   def wait
     puts
     puts 'Pressione qualquer tecla para continuar'
