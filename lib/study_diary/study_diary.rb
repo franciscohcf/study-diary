@@ -83,5 +83,27 @@ class StudyDiary
     puts 'Insira o titulo do item a ser marcado como concluído'
     temp = gets.chomp
     @contents[temp].check = true
+    puts 'Item marcado com sucesso'
+  end
+
+  def search
+    puts
+    puts 'Insira uma palavra chave para a busca'
+    temp = gets.chomp
+
+    @contents.each do |i|
+      next unless i[1].title.include?(temp) || i[1].description.include?(temp)
+
+      puts "Título: #{i[0]}"
+      puts "Descrição: #{i[1].description}" unless i[1].description.nil?
+      puts i[1].check == true ? 'Item concluído' : 'Pendente'
+      puts
+    end
+  end
+
+  def wait
+    puts
+    puts 'Pressione qualquer tecla para continuar'
+    $stdin.getc.chomp
   end
 end

@@ -12,15 +12,19 @@ loop do
   case study_diary.option
   when 1
     study_diary.add
+    study_diary.wait
   when 2
     study_diary.delete
+    study_diary.wait
   when 3
     study_diary.finish
+    study_diary.wait
   when 4
     study_diary.all
-    puts
-    puts 'Pressione qualquer tecla para continuar'
-    STDIN.getc
+    study_diary.wait
+  when 5
+    study_diary.search
+    study_diary.wait
   when 7
     puts
     "A aplicação está sendo encerrada!"
